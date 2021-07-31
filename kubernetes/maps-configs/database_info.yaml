@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+    name: database-config
+    namespace: default
+data:
+    database_url: "https://urrl:3306"
+    database_password: "1234"

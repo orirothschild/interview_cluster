@@ -1,0 +1,28 @@
+# What do want?
+# if someone calls me i will ask for  gigs
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+   name: mongo-pvc
+spec:
+  storageClassName: mylocalstorage0
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 20Gi
+---
+# How do we want it implemented
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+   name: mongo-pv
+spec:
+  storageClassName: mylocalstorage0
+  capacity:
+    storage: 20Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/mnt/mongo0/"
+    type: DirectoryOrCreate

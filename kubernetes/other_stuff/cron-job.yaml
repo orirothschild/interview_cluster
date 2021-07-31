@@ -1,0 +1,16 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: crony-the-cronjob
+spec:
+  schedule: "* * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: jobby
+          command: ["python"]
+          args: ["-c","import time; print('start')'"]
+          restartPolicy: Never
+          backoffLimit: 2
