@@ -4,7 +4,9 @@ terraform {
       source  = "hashicorp/aws"
       version = ">= 3.20.0"
     }
-
+    helm = {
+      version = ">=1.3.2"
+    }
     random = {
       source  = "hashicorp/random"
       version = "3.0.0"

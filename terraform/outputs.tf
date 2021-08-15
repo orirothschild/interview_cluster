@@ -32,3 +32,8 @@ output "cluster_name" {
   description = "Kubernetes Cluster Name"
   value       = local.cluster_name
 }
+
+output "route_name" {
+  value       = data.aws_route53_zone.selected.zone_id
+  description = "name of output"
+}

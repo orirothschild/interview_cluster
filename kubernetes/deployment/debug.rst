@@ -4,22 +4,37 @@ make sure pods are running and serving
 kubectl get pods -l app=queue \
     -o go-template='{{range .items}}{{.status.podIP}}{{"\n"}}{{end}}'
 
-make sure services are served with dns
-=======
-nslookup "host name here"
-if result looks like fleetman-webapp.default.svc.cluster.local
-then the service runs as the service name in the default namespace in the local cluster
+if a specific pod is required, lets test it is serving with 
 
-make sure the service serves its pods by curling its ip from the cluster
+for ep in <podIP><podPort>; do
+    wget -qO- $ep
+done
+
+for ep in 10.0.1.73:5000; do
+    wget -qO- $ep
+done
+make sure services are up and running:
+kubectl get svc <<hostname>>
+
+can our pod view our service?
+=======
+make sure kube-dns is working:
+nslookup kubernetes.default
+if successfull,
+from inside a pod in our cluster run the follwing to test a service is in our dns:
+
+nslookup "host name here"
+if result looks like fleetman-webapp.default.svc.cluster.local 
+then the service runs as the service name in the default namespace in the local cluster and is reachable
+
+make sure the service serves is serving currectly by running curl command  from a node, or by using port forward
 =======
 1. get the ip of the previous service
 2. exec into a pod
 3. wget/curl/telnet the ip adress
 
-3a.if service doesnt respond we can wget the ip of any of the pods in the deployments
-
-
 make sure endpoints are alive if previous step failed such as the right selectors or right ports
+kubectl get endpoints <<service_name>>
 =======
 
 make sure kube-proxy works right
