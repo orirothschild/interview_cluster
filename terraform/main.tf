@@ -93,7 +93,7 @@ module "cloudwatch_logs" {
 
 resource "aws_route53_record" "www" {
   zone_id = data.aws_route53_zone.selected.zone_id
-  name    = "fleet.${data.aws_route53_zone.selected.name}."
+  name    = data.aws_route53_zone.selected.name
   type    = "A"
 
   alias {
@@ -103,28 +103,21 @@ resource "aws_route53_record" "www" {
   }
 }
 
-module "alb" {
-  source              = "terraform-aws-modules/alb/aws"
-  version             = "6.4.0"
-  name                = "interview-eks-nlb"
-  subnets             = module.vpc.public_subnets
-  vpc_id              = module.vpc.vpc_id
-  load_balancer_type = "network"
-}
+# module "alb" {
+#   source              = "terraform-aws-modules/alb/aws"
+#   version             = "6.4.0"
+#   name                = "interview-eks-nlb"
+#   subnets             = module.vpc.public_subnets
+#   vpc_id              = module.vpc.vpc_id
+#   load_balancer_type = "network"
+# }
 
-module "container-insights" {
-  source       = "Young-ook/eks/aws//modules/container-insights"
-  cluster_name = local.cluster_name
-  oidc         =  {
-                  url = module.eks.cluster_oidc_issuer_url,
-                  arn = module.eks.oidc_provider_arn
-              }
-  tags         = { env = "test" }
-}
-# module "route53-record" {
-#   source  = "clouddrove/route53-record/aws"
-#   version = "0.15.0"
-#   zone_id = data.aws_route53_zone.selected.zone_id
-
-#   # insert the 3 required variables here
+# module "container-insights" {
+#   source       = "Young-ook/eks/aws//modules/container-insights"
+#   cluster_name = local.cluster_name
+#   oidc         =  {
+#                   url = module.eks.cluster_oidc_issuer_url,
+#                   arn = module.eks.oidc_provider_arn
+#               }
+#   tags         = { env = "test" }
 # }

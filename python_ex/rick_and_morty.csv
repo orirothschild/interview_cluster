@@ -1,0 +1,13 @@
+name,location,image
+Rick Sanchez,{'name': 'Earth (Replacement Dimension)'},https://rickandmortyapi.com/api/character/avatar/1.jpeg
+Morty Smith,{'name': 'Earth (Replacement Dimension)'},https://rickandmortyapi.com/api/character/avatar/2.jpeg
+Summer Smith,{'name': 'Earth (Replacement Dimension)'},https://rickandmortyapi.com/api/character/avatar/3.jpeg
+Beth Smith,{'name': 'Earth (Replacement Dimension)'},https://rickandmortyapi.com/api/character/avatar/4.jpeg
+Jerry Smith,{'name': 'Earth (Replacement Dimension)'},https://rickandmortyapi.com/api/character/avatar/5.jpeg
+Annie,{'name': 'Anatomy Park'},https://rickandmortyapi.com/api/character/avatar/17.jpeg
+Beth Sanchez,{'name': 'Earth (C-500A)'},https://rickandmortyapi.com/api/character/avatar/37.jpeg
+Beth Smith,{'name': 'Earth (C-137)'},https://rickandmortyapi.com/api/character/avatar/38.jpeg
+Beth Smith,"{'name': ""Earth (Evil Rick's Target Dimension)""}",https://rickandmortyapi.com/api/character/avatar/39.jpeg
+Bill,{'name': 'Earth (C-137)'},https://rickandmortyapi.com/api/character/avatar/45.jpeg
+Brad,{'name': 'Earth (Replacement Dimension)'},https://rickandmortyapi.com/api/character/avatar/58.jpeg
+Cool Rick,{'name': 'Citadel of Ricks'},https://rickandmortyapi.com/api/character/avatar/72.jpeg

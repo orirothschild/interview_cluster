@@ -3,6 +3,7 @@ from multiprocessing.dummy import Pool as ThreadPool
 from pathlib import Path
 import pandas as pd
 
+
 def json_to_csv(path_to_file):
     json_file = Path(path_to_file)
     if json_file.exists() and json_file.is_file():

@@ -1,0 +1,28 @@
+{
+    "Comment": "string",
+    "Changes": [
+        {
+            "Action": "CREATE",
+            "ResourceRecordSet":{
+                "ResourceRecords": [
+                    {
+                        "Value": "45.69.239.69"
+                    }                    
+                ], 
+                "Type": "A", 
+                "TTL": 300
+            }
+        },
+        {
+            "Action": "UPSET",
+            "Name": "_891ce7d73ac71efc74cf1bf4a592959e.lovelaboutique.com.",
+            "Type": "CNAME",
+            "TTL": 300,
+            "ResourceRecords": [
+                {
+                    "Value": "_04f5580744e71035de969391ac26eb66.bwlshdtstt.acm-validations.aws."
+                }
+            ]
+        }
+    ]
+}

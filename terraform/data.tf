@@ -4,7 +4,7 @@ data "aws_eks_cluster_auth" "cluster" {name = module.eks.cluster_id}
 
 data "aws_route53_zone" "selected" {
   private_zone = false
-  zone_id          = "Z0897978O8IZYTFKK5AY"
+  zone_id          = "Z0334646115V1WD7WFUSR"
 
 }
 

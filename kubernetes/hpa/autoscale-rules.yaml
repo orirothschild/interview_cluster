@@ -11,3 +11,4 @@ spec:
     kind: Deployment
     name: api-gateway
   targetCPUUtilizationPercentage: 400
+aws route53 list-resource-record-sets --hosted-zone-id hosted-zone-id > path-to-output-file
